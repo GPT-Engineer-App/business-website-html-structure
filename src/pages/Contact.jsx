@@ -1,4 +1,4 @@
-import { Container, VStack, Heading, FormControl, FormLabel, Input, Textarea, Button, Text } from "@chakra-ui/react";
+import { Container, VStack, Heading, FormControl, FormLabel, Input, Textarea, Button, Text, Box, Image } from "@chakra-ui/react";
 import { useState } from "react";
 
 const Contact = () => {
@@ -21,23 +21,29 @@ const Contact = () => {
   };
 
   return (
-    <Container centerContent maxW="container.md" py={10}>
-      <VStack spacing={4} as="form" onSubmit={handleSubmit}>
-        <Heading as="h1" size="2xl">Contact Us</Heading>
-        <FormControl id="name">
-          <FormLabel>Name</FormLabel>
-          <Input type="text" name="name" value={formData.name} onChange={handleChange} />
-        </FormControl>
-        <FormControl id="email">
-          <FormLabel>Email</FormLabel>
-          <Input type="email" name="email" value={formData.email} onChange={handleChange} />
-        </FormControl>
-        <FormControl id="message">
-          <FormLabel>Message</FormLabel>
-          <Textarea name="message" value={formData.message} onChange={handleChange} />
-        </FormControl>
-        <Button type="submit" colorScheme="blue">Submit</Button>
-        {message && <Text>{message}</Text>}
+    <Container centerContent maxW="container.xl" py={10} bg="gray.50" p={4}>
+      <VStack spacing={8} w="full">
+        <Box textAlign="center">
+          <Heading as="h1" size="2xl">Contact Us</Heading>
+          <Text fontSize="lg" mt={4}>We would love to hear from you. Please fill out the form below to get in touch with us.</Text>
+        </Box>
+        <Image src="/images/contact.jpg" alt="Contact Image" boxSize="400px" objectFit="cover" borderRadius="md" boxShadow="md" />
+        <VStack spacing={4} as="form" onSubmit={handleSubmit} w="full">
+          <FormControl id="name">
+            <FormLabel>Name</FormLabel>
+            <Input type="text" name="name" value={formData.name} onChange={handleChange} />
+          </FormControl>
+          <FormControl id="email">
+            <FormLabel>Email</FormLabel>
+            <Input type="email" name="email" value={formData.email} onChange={handleChange} />
+          </FormControl>
+          <FormControl id="message">
+            <FormLabel>Message</FormLabel>
+            <Textarea name="message" value={formData.message} onChange={handleChange} />
+          </FormControl>
+          <Button type="submit" colorScheme="blue">Submit</Button>
+          {message && <Text>{message}</Text>}
+        </VStack>
       </VStack>
     </Container>
   );
