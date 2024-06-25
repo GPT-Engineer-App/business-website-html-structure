@@ -12,7 +12,7 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (formData.name &amp;&amp; formData.email &amp;&amp; formData.message) {
+    if (formData.name && formData.email && formData.message) {
       setMessage("Thank you for your message. We will get back to you soon.");
       setFormData({ name: "", email: "", message: "" });
     } else {
@@ -37,7 +37,7 @@ const Contact = () => {
           <Textarea name="message" value={formData.message} onChange={handleChange} />
         </FormControl>
         <Button type="submit" colorScheme="blue">Submit</Button>
-        {message &amp;&amp; <Text>{message}</Text>}
+        {message && <Text>{message}</Text>}
       </VStack>
     </Container>
   );
