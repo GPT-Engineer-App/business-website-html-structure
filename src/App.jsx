@@ -5,6 +5,7 @@ import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
 import ComingSoon from "./pages/ComingSoon.jsx";
 import Navbar from "./components/Navbar.jsx";
+import Footer from "./components/Footer.jsx";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route exact path="/contact" element={<Contact />} />
         <Route exact path="/coming-soon" element={<ComingSoon />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }
