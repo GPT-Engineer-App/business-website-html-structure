@@ -1,4 +1,4 @@
-import { Container, VStack, Heading, FormControl, FormLabel, Input, Textarea, Button } from "@chakra-ui/react";
+import { Container, VStack, Heading, FormControl, FormLabel, Input, Textarea, Button, Text } from "@chakra-ui/react";
 import { useState } from "react";
 
 const Contact = () => {
@@ -12,7 +12,7 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (formData.name && formData.email && formData.message) {
+    if (formData.name &amp;&amp; formData.email &amp;&amp; formData.message) {
       setMessage("Thank you for your message. We will get back to you soon.");
       setFormData({ name: "", email: "", message: "" });
     } else {
